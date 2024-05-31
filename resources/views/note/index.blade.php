@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <div class="note-container py-12">
         <a href="{{ route('note.create') }}" class="new-note-btn">
             New Note
@@ -7,7 +7,7 @@
             @foreach ($notes as $note)
                 <div class="note">
                     <div class="note-body">
-                        {{ Str::words($note->note, '30') }}
+                        {{ Str::words($note->note, '5') }}
                     </div>
                     <div class="note-buttons">
                         <a href="{{ route('note.show', $note) }}" class="note-edit-button">View</a>
@@ -25,4 +25,4 @@
         {{ $notes->links() }}
 
     </div>
-</x-layout>
+</x-app-layout>

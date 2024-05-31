@@ -74,7 +74,7 @@ class NoteController extends Controller
             'note' =>  ['required', 'string']
         ]);
 
-        $data['user_id'] = 1;
+        $data['user_id'] = request()->user()->id;
         $note->update($data);
 
         return to_route('note.show', $note)->with('message', 'Note was updated');
